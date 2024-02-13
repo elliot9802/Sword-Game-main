@@ -119,11 +119,11 @@ class SwordGame {
       this.addLitenBild(this.euLista);
       this.kollaOmVinnare();
     } else {
-      this.markeraFelVal();
       this.felGissningar++;
       this.randomSvärd();
+      this.updateStatsDisplay();
+      this.markeraFelVal(this.euButton);
     }
-    this.updateStatsDisplay();
   }
 
   handleJpnClick() {
@@ -132,11 +132,11 @@ class SwordGame {
       this.addLitenBild(this.jpnLista);
       this.kollaOmVinnare();
     } else {
-      this.markeraFelVal();
       this.felGissningar++;
       this.randomSvärd();
+      this.updateStatsDisplay();
+      this.markeraFelVal(this.jpnButton);
     }
-    this.updateStatsDisplay();
   }
 
   handleFantasyClick() {
@@ -144,24 +144,22 @@ class SwordGame {
       this.felGissningar++;
       this.randomSvärd();
       this.updateStatsDisplay();
-      this.markeraFelVal();
+      this.markeraFelVal(this.fantasyButton);
     } else {
       this.randomSvärd();
     }
   }
 
-  markeraFelVal() {
-    const spelContainer = document.getElementById("svärdwrapper"); // Eller vilket element du vill markera
-    spelContainer.classList.add("fel-val");
-
-    // Alternativt, lägga till skakande animation
+  markeraFelVal(knapp) {
+    const spelContainer = document.getElementById("svärdwrapper");
     spelContainer.style.animation = "shake 0.5s";
 
-    // Ta bort klassen eller återställ animationen efter att den är klar
+    knapp.style.animation = "blinkBackground 0.5s";
+
     setTimeout(() => {
-      spelContainer.classList.remove("fel-val");
-      spelContainer.style.animation = ""; // Återställ animationen
-    }, 500); // Tidsintervall bör matcha animationens längd
+      spelContainer.style.animation = "";
+      knapp.style.animation = "";
+    }, 500);
   }
 
   kollaOmVinnare() {

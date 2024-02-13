@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link rel="stylesheet" href="style.css" />
     <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
-    <title>Test</title>
+    <title>Svärdspelet</title>
     <script defer src="index.js"></script>
   </head>
 
@@ -25,17 +25,21 @@
         </h2>
         <div class="justify-content-center text-center svärd">
           <div id="svärdwrapper">
-            <img id="svärdbild" class="img-responsive center-block" />
+            <img
+              id="svärdbild"
+              alt="svärd bild"
+              class="img-responsive center-block"
+            />
 
-            <div class="row justify-content-center knapprad osynlig">
+            <div class="justify-content-center knapprad osynlig">
               <p>Vem vill ha svärdet?</p>
-              <button class="val row justify-content-center" id="europeiskt">
+              <button class="val justify-content-center option" id="europeiskt">
                 Liechtenauer!
               </button>
-              <button class="val row justify-content-center" id="japanskt">
+              <button class="val justify-content-center option" id="japanskt">
                 Musashi!
               </button>
-              <button class="val row justify-content-center" id="fantasi">
+              <button class="val justify-content-center option" id="fantasi">
                 Ingendera, ser löjligt ut
               </button>
             </div>
@@ -82,7 +86,6 @@
     <footer class="row justify-content-center">
       <div class="col-sm-8 col-md-6 text-center">
         <hr />
-        <!-- Lägg ditt namn här med hjälp av javascript!-->
         <span id="footer"></span>
       </div>
     </footer>

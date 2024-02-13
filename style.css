@@ -17,6 +17,11 @@ div {
   border-color: rgb(82, 40, 16);
 }
 
+.option {
+  margin-bottom: 0.5em;
+  padding: 0.2em 1em;
+}
+
 .svärd {
   position: relative;
 }
@@ -26,8 +31,8 @@ div {
   transition: height 2s;
 }
 
-#knapprad {
-  max-width: 200px;
+.knapprad {
+  max-width: 300px;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -40,18 +45,13 @@ div {
   background-color: rgba(202, 177, 177, 0.842);
 }
 
-.test {
-  max-width: 200px;
-}
-
 .lista > img {
   padding: 10px;
 }
 
 #svärdbild {
-  min-width: 30em;
-  max-width: 50em;
-  height: 15em;
+  width: 40em;
+  height: 20em;
 }
 
 img {
@@ -151,20 +151,18 @@ footer {
   border-style: solid;
 }
 
-/* Röd bakgrund för att indikera fel */
-.fel-val {
-  animation: blinkBackground 0.5s;
-}
-
-/* Skakande animation */
 @keyframes shake {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  75% { transform: translateX(5px); }
-  100% { transform: translateX(0); }
+  0%, 100% {
+    transform: translateX(0) scale(1);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-5px) scale(1);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(5px) scale(1);
+  }
 }
 
-/* Bakgrundsblixt animation */
 @keyframes blinkBackground {
   0% { background-color: transparent; }
   50% { background-color: rgba(255, 0, 0, 0.5); }
