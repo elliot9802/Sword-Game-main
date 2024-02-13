@@ -1,0 +1,186 @@
+@import "https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap";
+
+body {
+  overflow-x: hidden;
+}
+
+h1 {
+  font-family: "Gochi Hand";
+}
+
+div {
+  padding: 4mm;
+}
+
+.val {
+  color: rgb(82, 40, 16);
+  border-color: rgb(82, 40, 16);
+}
+
+.svärd {
+  position: relative;
+}
+
+#svärdwrapper {
+  display: inline-block;
+  transition: height 2s;
+}
+
+#knapprad {
+  max-width: 200px;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  position: absolute;
+  padding: 5mm;
+  border-style: solid;
+  border-color: rgba(165, 42, 42, 0.233);
+  background-color: rgba(202, 177, 177, 0.842);
+}
+
+.test {
+  max-width: 200px;
+}
+
+.lista > img {
+  padding: 10px;
+}
+
+#svärdbild {
+  min-width: 30em;
+  max-width: 50em;
+  height: 15em;
+}
+
+img {
+  border: 2mm ridge brown;
+}
+
+div.resultat div section img {
+  max-width: 100px;
+  border: 1mm ridge brown;
+}
+
+img.small {
+  max-width: 200px;
+  max-height: 200px;
+  border: none;
+}
+
+.synlig {
+  visibility: visible;
+}
+
+.osynlig {
+  visibility: hidden;
+}
+
+footer {
+  opacity: 0.5;
+}
+
+#footer::before {
+  content: "⚔️";
+}
+
+#footer::after {
+  content: "⚔️";
+}
+
+.spela-igen-btn {
+  background-color: #4CAF50; /* Grön bakgrund */
+  color: white; /* Vit text */
+  padding: 10px 20px; /* Top/bottom och left/right padding */
+  border: none; /* Ingen kant */
+  border-radius: 5px; /* Rundade hörn */
+  cursor: pointer; /* Muspekare blir en pekare när du hovrar över knappen */
+  font-size: 16px; /* Större text */
+  margin-top: 20px; /* Marginal på toppen för att separera från texten ovan */
+}
+
+.spela-igen-btn:hover {
+  background-color: #45a049; /* Mörkare grön färg vid hover */
+}
+
+
+.overlay {
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.418);
+  z-index: 2;
+}
+
+.overlay > div {
+  animation: zoom-in-zoom-out 1s ease-out infinite;
+  position: fixed;
+  top: 30%;
+  left: 20%;
+  right: 20%;
+  color: darkgoldenrod;
+  background-color: rgba(0, 0, 0, 0.808);
+  border-style: dashed;
+}
+
+.svar {
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.418);
+  z-index: 2;
+}
+
+.svar > div {
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  top: 50%;
+  background-color: rgba(255, 255, 255, 0.808);
+  border-style: solid;
+}
+
+.felsvar {
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.418);
+  z-index: 2;
+}
+
+.felsvar>div {
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  top: 20%;
+  background-color: rgba(255, 255, 255, 0.808);
+  border-style: solid;
+}
+
+@keyframes zoom-in-zoom-out {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.5, 1.5);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}

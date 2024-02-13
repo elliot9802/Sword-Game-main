@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+    <title>Test</title>
+    <script defer src="index.js"></script>
+  </head>
+
+  <body>
+    <main class="container-fluid p-2">
+      <div class="justify-content-center">
+        <h1 class="text-center">Vems svärd är det?</h1>
+        <h2 class="text-center">
+          Både Musashi och Liechtenauer vill ha två svärd innan de blir nöjda
+        </h2>
+        <div class="justify-content-center text-center svärd">
+          <div id="svärdwrapper">
+            <img id="svärdbild" class="img-responsive center-block" />
+
+            <div class="row justify-content-center knapprad osynlig">
+              <p>Vem vill ha svärdet?</p>
+              <button class="val row justify-content-center" id="europeiskt">
+                Liechtenauer!
+              </button>
+              <button class="val row justify-content-center" id="japanskt">
+                Musashi!
+              </button>
+              <button class="val row justify-content-center" id="fantasi">
+                Ingendera, ser löjligt ut
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="resultat row justify-content-center">
+        <div id="musashi" class="col-md-4">
+          <img class="small" src="img/musashi.jpg" />
+          <h3 class="räknare">Musashi har 0 svärd</h3>
+
+          <section class="lista">
+            <!--Den här listan kan du fylla med bilder av musashis svärd för VG-->
+          </section>
+        </div>
+
+        <div id="liechtenauer" class="col-md-4">
+          <img class="small" src="img/lichty.jpg" />
+          <h3 class="räknare">Liechtenauer har 0 svärd</h3>
+          <section class="lista">
+            <!--Den här listan kan du fylla med bilder av liechtenauers svärd för VG -->
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <div id="grattis" class="osynlig overlay">
+      <div>
+        <h1>⚔️⚔️Glädjen är fullständig, båda har fått två svärd!⚔️⚔️</h1>
+        <div class="stats-container text-center">
+          <h3 id="stats">Spelade gånger: 0 <br />Fel gissningar: 0</h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="svar osynlig">
+      <div>
+        <h2>Ditt svar var</h2>
+        <button class="val">OK</button>
+      </div>
+    </div>
+
+    <div id="felsvar" class="felsvar osynlig">
+      <div>
+        <h2>Du lyckades inte gissa alla rätt, försök igen</h2>
+        <button class="osynlig">Gör ett nytt försök</button>
+      </div>
+    </div>
+
+    <footer class="row justify-content-center">
+      <div class="col-sm-8 col-md-6 text-center">
+        <hr />
+        <!-- Lägg ditt namn här med hjälp av javascript!-->
+        <span id="footer"></span>
+      </div>
+    </footer>
+  </body>
+</html>
