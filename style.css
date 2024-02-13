@@ -151,27 +151,26 @@ footer {
   border-style: solid;
 }
 
-.felsvar {
-  text-align: center;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.418);
-  z-index: 2;
+/* Röd bakgrund för att indikera fel */
+.fel-val {
+  animation: blinkBackground 0.5s;
 }
 
-.felsvar>div {
-  text-align: center;
-  display: inline-block;
-  position: relative;
-  top: 20%;
-  background-color: rgba(255, 255, 255, 0.808);
-  border-style: solid;
+/* Skakande animation */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
 }
+
+/* Bakgrundsblixt animation */
+@keyframes blinkBackground {
+  0% { background-color: transparent; }
+  50% { background-color: rgba(255, 0, 0, 0.5); }
+  100% { background-color: transparent; }
+}
+
 
 @keyframes zoom-in-zoom-out {
   0% {

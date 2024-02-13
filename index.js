@@ -119,6 +119,7 @@ class SwordGame {
       this.addLitenBild(this.euLista);
       this.kollaOmVinnare();
     } else {
+      this.markeraFelVal();
       this.felGissningar++;
       this.randomSvärd();
     }
@@ -131,6 +132,7 @@ class SwordGame {
       this.addLitenBild(this.jpnLista);
       this.kollaOmVinnare();
     } else {
+      this.markeraFelVal();
       this.felGissningar++;
       this.randomSvärd();
     }
@@ -142,9 +144,24 @@ class SwordGame {
       this.felGissningar++;
       this.randomSvärd();
       this.updateStatsDisplay();
+      this.markeraFelVal();
     } else {
       this.randomSvärd();
     }
+  }
+
+  markeraFelVal() {
+    const spelContainer = document.getElementById("svärdwrapper"); // Eller vilket element du vill markera
+    spelContainer.classList.add("fel-val");
+
+    // Alternativt, lägga till skakande animation
+    spelContainer.style.animation = "shake 0.5s";
+
+    // Ta bort klassen eller återställ animationen efter att den är klar
+    setTimeout(() => {
+      spelContainer.classList.remove("fel-val");
+      spelContainer.style.animation = ""; // Återställ animationen
+    }, 500); // Tidsintervall bör matcha animationens längd
   }
 
   kollaOmVinnare() {
