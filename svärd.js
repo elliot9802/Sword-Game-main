@@ -56,17 +56,47 @@ async function randomSvärd() {
 // Första slumpade svärdet som visas vid sidans laddning
 randomSvärd();
 
-// Funktion för att visa knapprad Diven när musen pekar på svärdwrapper
-svärdwrapper.addEventListener("mouseover", () => {
-  knappradDiv.classList.add("synlig");
-  knappradDiv.classList.remove("osynlig");
-});
+// /// Identifiera om enheten är en pekskärm
+// const isTouchDevice =
+//   "ontouchstart" in window ||
+//   navigator.maxTouchPoints > 0 ||
+//   navigator.msMaxTouchPoints > 0;
 
-// Funktion för att gömma knapprad Diven när musen inte pekar på svärdwrapper
-svärdwrapper.addEventListener("mouseleave", () => {
-  knappradDiv.classList.remove("synlig");
-  knappradDiv.classList.add("osynlig");
-});
+// if (isTouchDevice) {
+//   // Ersätt 'mouseover' och 'mouseleave' med touchbaserade händelser för pekskärm
+//   svärdwrapper.addEventListener(
+//     "touchstart",
+//     () => {
+//       knappradDiv.classList.add("synlig");
+//       knappradDiv.classList.remove("osynlig");
+//     },
+//     { passive: true }
+//   );
+
+//   // Du kan behöva hantera 'touchend' på ett annat element beroende på din design
+//   // Detta är bara ett exempel på hur man kan göra det
+//   document.addEventListener(
+//     "touchstart",
+//     (event) => {
+//       if (!svärdwrapper.contains(event.target)) {
+//         knappradDiv.classList.remove("synlig");
+//         knappradDiv.classList.add("osynlig");
+//       }
+//     },
+//     { passive: true }
+//   );
+// } else {
+//   // För icke-pekskärmsenheter, använd musbaserade händelser som vanligt
+//   svärdwrapper.addEventListener("mouseover", () => {
+//     knappradDiv.classList.add("synlig");
+//     knappradDiv.classList.remove("osynlig");
+//   });
+
+//   svärdwrapper.addEventListener("mouseleave", () => {
+//     knappradDiv.classList.remove("synlig");
+//     knappradDiv.classList.add("osynlig");
+//   });
+// }
 
 // Funktion för att kolla om en vinnare har utsetts
 function kollaOmVinnare() {

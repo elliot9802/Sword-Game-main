@@ -50,12 +50,12 @@ class SwordGame {
     this.jpnButton = document.getElementById("japanskt");
     this.fantasyButton = document.getElementById("fantasi");
     this.svarH2.textContent = "Du gav till rätt mästare";
-    this.statsDiv = document.getElementById("stats"); // Anta att du har ett element för att visa statistik
+    this.statsDiv = document.getElementById("stats");
     this.resetButton = document.createElement("button");
-    this.resetButton.className = "spela-igen-btn"; // Lägg till klassnamnet för styling
+    this.resetButton.className = "spela-igen-btn";
     this.resetButton.innerText = "Spela igen";
     this.resetButton.addEventListener("click", () => this.resetGame(true));
-    this.grattisMeddelande.appendChild(this.resetButton); // Lägger till knappen i grattis-meddelandet
+    this.grattisMeddelande.appendChild(this.resetButton);
     this.felGissningar = 0;
     this.updateStatsDisplay();
   }

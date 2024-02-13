@@ -13,8 +13,19 @@ div {
 }
 
 .val {
+  margin: 10px 0; 
+  padding: 10px 20px; 
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem; 
   color: rgb(82, 40, 16);
   border-color: rgb(82, 40, 16);
+  transition: background-color 0.3s ease; 
+}
+
+.val:hover {
+  background-color: #d7d7d7;
 }
 
 .option {
@@ -32,17 +43,27 @@ div {
 }
 
 .knapprad {
-  max-width: 300px;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center;
   padding: 5mm;
   border-style: solid;
   border-color: rgba(165, 42, 42, 0.233);
   background-color: rgba(202, 177, 177, 0.842);
+  max-width: 300px;
+  margin: auto; 
+  transition: all 0.5s ease; 
+}
+
+/* Stil för att visa knappraden vid hover på icke-pekskärmsenheter */
+@media (hover: hover) {
+  #svärdwrapper:hover .knapprad {
+    visibility: visible;
+    opacity: 1;
+  }
 }
 
 .lista > img {
@@ -90,18 +111,18 @@ footer {
 }
 
 .spela-igen-btn {
-  background-color: #4CAF50; /* Grön bakgrund */
-  color: white; /* Vit text */
-  padding: 10px 20px; /* Top/bottom och left/right padding */
-  border: none; /* Ingen kant */
-  border-radius: 5px; /* Rundade hörn */
-  cursor: pointer; /* Muspekare blir en pekare när du hovrar över knappen */
-  font-size: 16px; /* Större text */
-  margin-top: 20px; /* Marginal på toppen för att separera från texten ovan */
+  background-color: #4CAF50; 
+  color: white; 
+  padding: 10px 20px;
+  border: none; 
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px; 
+  margin-top: 20px; 
 }
 
 .spela-igen-btn:hover {
-  background-color: #45a049; /* Mörkare grön färg vid hover */
+  background-color: #45a049;
 }
 
 
@@ -179,5 +200,23 @@ footer {
   }
   100% {
     transform: scale(1, 1);
+  }
+}
+
+@media (max-width: 768px) {
+  #svärdbild {
+    max-width: 100%;
+    height: 15em; 
+  }
+  
+  .knapprad {
+    flex-direction: column; 
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .val {
+    font-size: 0.8rem; 
+    padding: 8px 16px; 
   }
 }
